@@ -18,7 +18,7 @@ class NewsSources extends Component {
         </NS.Header>
 
         <div style={{ paddingTop: '100px' }}>
-          {sources.length > 0 && sources.map((source, index) => (
+          {sources && sources.length > 0 && sources.map((source, index) => (
             <NS.Item onClick={() => fetchNewsArticlesBySource(source.id)} current={index === 1} key={index}>
               <NS.Source>{source.name}</NS.Source>
               <NS.Category>{source.category}</NS.Category>

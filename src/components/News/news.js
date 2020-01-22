@@ -14,7 +14,7 @@ class News extends Component {
         <N.Header><b>Top</b> headlines</N.Header>
 
         <N.Container collapse={collapse}>
-          {articles.length > 0 && articles.map((article, index) => (
+          {articles && articles.length > 0 && articles.map((article, index) => (
             <N.Item
               recent={index === 0}
               hasImage={article.urlToImage}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { fetchNewsArticles, fetchSources } from './actions/newsAction';
+import { persistStore } from 'redux-persist';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -13,9 +14,6 @@ import App from './App';
 
 import configureStore from './store/index';
 const { store, persistor } = configureStore();
-
-store.dispatch(fetchNewsArticles());
-store.dispatch(fetchSources());
 
 ReactDOM.render(
   <Provider store={store}>

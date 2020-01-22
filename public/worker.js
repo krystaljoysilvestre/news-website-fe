@@ -1,7 +1,10 @@
 var CACHE_NAME = 'pwa-task-manager';
 var urlsToCache = [
   '/',
-  '/completed'
+  '/static/js/0.chunk.js',
+  '/static/js/main.chunk.js',
+  '/static/js.bundle.js',
+  'https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800&display=swap'
 ];
 
 // Install a service worker

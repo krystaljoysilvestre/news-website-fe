@@ -23,7 +23,7 @@ export const Header = styled.div`
 export const Item = styled.div`
   border-bottom: 1px solid ${colors.border};
   height: 75px;
-  background: ${props => props.visited ? '#f9f9fb' : '#f0f4f9'};
+  background: ${props => props.current ? '#f9f9fb' : '#f0f4f9'};
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -34,13 +34,15 @@ export const Item = styled.div`
 
 export const Source = styled.div`
   color: ${colors.primary};
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   margin-bottom: 5px;
 `;
 
-export const NewsTitle = styled.div`
+export const Category = styled.div`
   margin-bottom: 5px;
+  font-size: 9px;
+  text-transform: capitalize;
 
   &:last-child {
     margin-bottom: 0px;

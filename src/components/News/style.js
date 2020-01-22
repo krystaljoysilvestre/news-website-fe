@@ -32,46 +32,66 @@ export const Container = styled.div`
   `};
 `;
 
+export const Description = styled.div`
+  font-size: 10px;
+  line-height: 1.3;
+  margin: 0px;
+  min-height: 12px;
+  overflow: hidden;
+  margin-bottom: 2px;
+  text-overflow: ellipsis;
+  display: none;
+  align-items: center;
+
+  ${media.desktop`
+    font-size: 11px;
+    margin-bottom: 3px;
+  `};
+`;
+
 export const Caption = styled.a`
   background: #eef0f6;
   height: 100%;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px 15px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   color: inherit;
 
   ${media.desktop`
-    padding: 25px;
+    padding: 15px 25px;
   `};
-
-  p {
-    font-size: 10px;
-    line-height: 1.3;
-    margin: 0px;
-    max-height: 48px;
-    min-height: 12px;
-    overflow: hidden;
-    margin-bottom: 1px;
-    text-overflow: ellipsis;
-
-    ${media.desktop`
-      font-size: 12px;
-      margin-bottom: 3px;
-    `};
-  }
 
   &:hover {
     text-decoration: none;
     color: inherit;
 
-    p {
-      max-height: 100%;
-      transition: max-height 1.5s;
-      -webkit-transition: max-height 1.5s;
+    ${Description} {
+      display: flex;
     }
   }
+`;
+
+export const Source = styled.div`
+  font-size: 8px;
+  line-height: 1.3;
+  margin: 0px;
+  min-height: 12px;
+  overflow: hidden;
+  margin-bottom: 1px;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+
+  ${media.desktop`  
+    margin-bottom: 3px;
+  `};
+`;
+
+export const CaptionContainer = styled.div`
+  max-height: 100%;
+  overflow: hidden;
 `;
 
 export const Title = styled.h3`
@@ -115,14 +135,21 @@ export const Item = styled.div`
       width: calc(100% - 20px);
       height: calc(100% - 20px);
       background: rgb(77,77,77);
-      background: linear-gradient(0deg, rgba(50,50,50,0.7) 0%, rgba(0,0,0,0) 70%);
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
       color: white;
-      text-shadow: 1px 1px rgba(50,50,50,0.3);
+
+      ${media.tablet`
+        background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 30%);
+      `}
+
+      &:hover {
+        background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 100%);
+        overflow: scroll;
+      }
     }
 
     ${Title} {
       color: white;
     }
   `}
-  
 `;

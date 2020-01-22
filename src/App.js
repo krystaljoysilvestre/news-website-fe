@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import _ from 'lodash';
-
-import { simpleAction } from './actions/simpleAction';
 
 import PriceIndexBar from './components/PriceIndexBar';
 import NavigationBar from './components/NavigationBar';
@@ -41,7 +40,6 @@ class App extends Component {
 
   render() {
     const { isSideBarCollapsed, isNewsArticlesCollapsed } = this.state;
-    const { news } = this.props;
 
     return (
       <A.Wrapper>
@@ -62,7 +60,7 @@ class App extends Component {
             </A.Collapse>
             <NavigationBar />
           </A.TopBar>
-          <News articles={news.articles} collapse={isNewsArticlesCollapsed} />
+          <News collapse={isNewsArticlesCollapsed} />
         </A.Container>
         <A.MoreNews onClick={this.toggleNewsArticles}>
           {isNewsArticlesCollapsed ? '+' : '-'}
@@ -72,12 +70,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

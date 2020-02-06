@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import _ from 'lodash';
 
 import PriceIndexBar from './components/PriceIndexBar';
 import NavigationBar from './components/NavigationBar';
@@ -19,7 +16,7 @@ class App extends Component {
   toggleSideBar = () => {
     this.setState({
       isSideBarCollapsed: !this.state.isSideBarCollapsed
-    })
+    });
   };
 
   toggleNewsArticles = () => {
@@ -44,9 +41,7 @@ class App extends Component {
     return (
       <A.Wrapper>
         <A.SideBar>
-          <A.Logo>
-            K
-          </A.Logo>
+          <A.Logo>K</A.Logo>
           <PriceIndexBar />
         </A.SideBar>
         <A.CollapsiblePanel collapse={isSideBarCollapsed}>

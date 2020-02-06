@@ -43,27 +43,27 @@ export const Container = styled.div`
   background: white;
   display: flex;
   padding: 0 20px 20px 20px;
-  z-index: ${props => props.collapse ? '0' : '1'};;
+  z-index: ${props => (props.collapse ? '0' : '1')};
   flex-direction: column;
   overflow: hidden;
-  margin-right: ${props => props.collapse ? '0' : '-200px'};
-  margin-top: ${props => props.collapse ? '0' : '10px'};
-  border-top-left-radius: ${props => props.collapse ? '0' : '20px'};
-  border-left: 1px solid ${props => props.collapse ? colors.border : 'white'};
+  margin-right: ${props => (props.collapse ? '0' : '-200px')};
+  margin-top: ${props => (props.collapse ? '0' : '10px')};
+  border-top-left-radius: ${props => (props.collapse ? '0' : '20px')};
+  border-left: 1px solid ${props => (props.collapse ? colors.border : 'white')};
   -webkit-transition: margin 0.3s ease-out;
   -moz-transition: margin 0.3s ease-out;
   -o-transition: margin 0.3s ease-out;
   transition: margin 0.3s ease-out;
-  -webkit-box-shadow: -3px 3px 3px 0px rgba(224,224,224,1);
-  -moz-box-shadow: -3px 3px 3px 0px rgba(224,224,224,1);
-  box-shadow: -3px 3px 3px 0px rgba(224,224,224,1);
+  -webkit-box-shadow: -3px 3px 3px 0px rgba(224, 224, 224, 1);
+  -moz-box-shadow: -3px 3px 3px 0px rgba(224, 224, 224, 1);
+  box-shadow: -3px 3px 3px 0px rgba(224, 224, 224, 1);
 
   ${media.tablet`
     padding: 0 40px 40px 40px;
   `};
   ${media.desktop`
     padding: 0 80px 50px 80px;
-    margin-right: ${props => props.collapse ? '0' : '-250px'};
+    margin-right: ${props => (props.collapse ? '0' : '-250px')};
   `};
 `;
 
@@ -93,7 +93,7 @@ export const Collapse = styled.div`
 export const CollapsiblePanel = styled.div`
   width: 200px;
   overflow: scroll;
-  margin-left: ${props => props.collapse ? '-200px' : '0'};
+  margin-left: ${props => (props.collapse ? '-200px' : '0')};
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -105,7 +105,7 @@ export const CollapsiblePanel = styled.div`
 
   ${media.tablet`
     width: 250px;
-    margin-left: ${props => props.collapse ? '-250px' : '0'};
+    margin-left: ${props => (props.collapse ? '-250px' : '0')};
   `};
 `;
 
@@ -115,6 +115,7 @@ export const TopBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
 
   ${media.desktop`
     min-height: 100px;

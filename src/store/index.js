@@ -11,17 +11,24 @@ const configureStore = preloadedState => {
   const middlewares = [thunkMiddleware];
   const persistConfig = {
     key: 'root',
-    storage,
-  }
+    storage
+  };
 
   if (process.env.NODE_ENV !== 'production') {
     middlewares.push(createLogger());
   }
 
   const middlewareEnhancer = applyMiddleware(...middlewares);
-  const persistedReducer = persistReducer(persistConfig, rootReducer)
-  const store = createStore(persistedReducer, preloadedState, middlewareEnhancer);
-  const persistor = persistStore(store);
+  const persistedReducer = persistReducer(persistConfig, rootReducer);
+  const store = createStore(
+    persistedReducer,
+    preloadedState,
+    middlewareEnhancer
+  );
+  const persistor = persistStore(store, null, () => {
+    store.dispatch(fetchNewsArticles());
+    store.dispatch(fetchSources());
+  });
 
   return { store, persistor };
 };
